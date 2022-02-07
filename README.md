@@ -1,5 +1,6 @@
 ![](https://github.com/reactive-commons/reactive-commons-java/workflows/reactive-commons-ci-cd/badge.svg)
 [![Reactor RabbitMQ](https://maven-badges.herokuapp.com/maven-central/org.reactivecommons/async-commons-rabbit-starter/badge.svg)](https://mvnrepository.com/artifact/org.reactivecommons/async-commons-rabbit-starter)
+[![Scorecards supply-chain security](https://github.com/bancolombia/reactive-commons-java/actions/workflows/scorecards-analysis.yml/badge.svg)](https://github.com/bancolombia/reactive-commons-java/actions/workflows/scorecards-analysis.yml)
 # reactive-commons-java
 The purpose of reactive-commons is to provide a set of abstractions and implementations over different patterns and practices that make the foundation of a reactive microservices architecture.
 
