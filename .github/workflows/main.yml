@@ -17,11 +17,11 @@ jobs:
     if: github.event_name != 'release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
         with:
           fetch-depth: 0
       - name: Set up JDK 11
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@e54a62b3df9364d4b4c1c29c7225e57fe605d7dd
         with:
           java-version: 11
       - name: Grant execute permission for gradlew
@@ -43,9 +43,9 @@ jobs:
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
       - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@e54a62b3df9364d4b4c1c29c7225e57fe605d7dd
         with:
           java-version: 1.8
       - name: Grant execute permission for gradlew
@@ -55,7 +55,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build asciidoctor --refresh-dependencies --no-daemon --continue -Denv.ci=true
       - name: Generate Changelog
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        uses: heinrichreimer/github-changelog-generator-action@04f64206d10b4f9c882da8157ffc3dfa6ce66b3e
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pullRequests: true
@@ -64,7 +64,7 @@ jobs:
           issuesWoLabels: true
           stripGeneratorNotice: true
       - name: Push Docs and Changelog
-        uses: github-actions-x/commit@v2.7
+        uses: github-actions-x/commit@69015b5e624ca9a67e9aa66e6a74183834fbf9d7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'master'
